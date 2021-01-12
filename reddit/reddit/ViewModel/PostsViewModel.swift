@@ -11,15 +11,18 @@ class PostsViewModel {
 
     private let postsService = PostsService()
 
-    var onPostsLoaded: ((_ posts: [Post]?) -> ())?
-    var onError: ((_ error: Error) -> ())?
+    var posts: [Post]?
+
+    var onPostsLoaded: (() -> Void)?
+
+    var onError: ((_ error: Error) -> Void)?
 
     func loadTopPosts() {
         postsService.getTopPosts { response in
-            let posts = response.data.children?.map({ postItem -> Post in
+            self.posts = response.data.children?.map({ postItem -> Post in
                 postItem.data
             })
-            self.onPostsLoaded?(posts)
+            self.onPostsLoaded?()
         } onError: { error in
             self.onError?(error)
         }

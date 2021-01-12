@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B812202125ACF22D00D9BAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812202025ACF22D00D9BAB5 /* AppDelegate.swift */; };
 		B812202325ACF22D00D9BAB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812202225ACF22D00D9BAB5 /* SceneDelegate.swift */; };
-		B812202525ACF22D00D9BAB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812202425ACF22D00D9BAB5 /* ViewController.swift */; };
+		B812202525ACF22D00D9BAB5 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812202425ACF22D00D9BAB5 /* PostsViewController.swift */; };
 		B812202825ACF22D00D9BAB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B812202625ACF22D00D9BAB5 /* Main.storyboard */; };
 		B812202A25ACF23000D9BAB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B812202925ACF23000D9BAB5 /* Assets.xcassets */; };
 		B812202D25ACF23000D9BAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B812202B25ACF23000D9BAB5 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,7 @@
 		B812207125AD002100D9BAB5 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812207025AD002100D9BAB5 /* PostsService.swift */; };
 		B812207625AD011400D9BAB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812207525AD011400D9BAB5 /* Constants.swift */; };
 		B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81220A525AD034400D9BAB5 /* PostsViewModel.swift */; };
+		B866BB7725AD27460040541A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866BB7625AD27460040541A /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,7 @@
 		B812201D25ACF22D00D9BAB5 /* reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B812202025ACF22D00D9BAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B812202225ACF22D00D9BAB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B812202425ACF22D00D9BAB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B812202425ACF22D00D9BAB5 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		B812202725ACF22D00D9BAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B812202925ACF23000D9BAB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B812202C25ACF23000D9BAB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		B812207025AD002100D9BAB5 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		B812207525AD011400D9BAB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B81220A525AD034400D9BAB5 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		B866BB7625AD27460040541A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +155,8 @@
 		B812205725ACF26000D9BAB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B812202425ACF22D00D9BAB5 /* ViewController.swift */,
+				B866BB7525AD27340040541A /* Cell */,
+				B866BB7425AD27110040541A /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +184,22 @@
 				B812207525AD011400D9BAB5 /* Constants.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		B866BB7425AD27110040541A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B812202425ACF22D00D9BAB5 /* PostsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B866BB7525AD27340040541A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B866BB7625AD27460040541A /* PostCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,11 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B812202525ACF22D00D9BAB5 /* ViewController.swift in Sources */,
+				B812202525ACF22D00D9BAB5 /* PostsViewController.swift in Sources */,
 				B812202125ACF22D00D9BAB5 /* AppDelegate.swift in Sources */,
 				B812206625ACFF0D00D9BAB5 /* PostsResponse.swift in Sources */,
 				B812205D25ACFCC700D9BAB5 /* Posts.swift in Sources */,
 				B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */,
+				B866BB7725AD27460040541A /* PostCell.swift in Sources */,
 				B812207625AD011400D9BAB5 /* Constants.swift in Sources */,
 				B812202325ACF22D00D9BAB5 /* SceneDelegate.swift in Sources */,
 				B812207125AD002100D9BAB5 /* PostsService.swift in Sources */,
