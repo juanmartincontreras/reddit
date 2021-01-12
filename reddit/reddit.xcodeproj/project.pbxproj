@@ -20,7 +20,9 @@
 		B812207125AD002100D9BAB5 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812207025AD002100D9BAB5 /* PostsService.swift */; };
 		B812207625AD011400D9BAB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812207525AD011400D9BAB5 /* Constants.swift */; };
 		B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81220A525AD034400D9BAB5 /* PostsViewModel.swift */; };
+		B8522E8225ADE8AA000E5B9D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8522E8125ADE8AA000E5B9D /* PostDetailViewController.swift */; };
 		B866BB7725AD27460040541A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866BB7625AD27460040541A /* PostCell.swift */; };
+		B8E0E05825AD2E6A002DB948 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0E05725AD2E6A002DB948 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +62,9 @@
 		B812207025AD002100D9BAB5 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		B812207525AD011400D9BAB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B81220A525AD034400D9BAB5 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		B8522E8125ADE8AA000E5B9D /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		B866BB7625AD27460040541A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		B8E0E05725AD2E6A002DB948 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,7 @@
 		B812201F25ACF22D00D9BAB5 /* reddit */ = {
 			isa = PBXGroup;
 			children = (
-				B81220A125AD015C00D9BAB5 /* Settings */,
+				B8E0E05525AD2E52002DB948 /* Helper */,
 				B812206425ACFED400D9BAB5 /* Service */,
 				B812205825ACF27900D9BAB5 /* Model */,
 				B812205725ACF26000D9BAB5 /* View */,
@@ -178,18 +182,11 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		B81220A125AD015C00D9BAB5 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				B812207525AD011400D9BAB5 /* Constants.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
 		B866BB7425AD27110040541A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B812202425ACF22D00D9BAB5 /* PostsViewController.swift */,
+				B8522E8125ADE8AA000E5B9D /* PostDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -200,6 +197,23 @@
 				B866BB7625AD27460040541A /* PostCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B8E0E05525AD2E52002DB948 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B812207525AD011400D9BAB5 /* Constants.swift */,
+				B8E0E05625AD2E5A002DB948 /* Extension */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		B8E0E05625AD2E5A002DB948 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B8E0E05725AD2E6A002DB948 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,10 +349,12 @@
 				B812202525ACF22D00D9BAB5 /* PostsViewController.swift in Sources */,
 				B812202125ACF22D00D9BAB5 /* AppDelegate.swift in Sources */,
 				B812206625ACFF0D00D9BAB5 /* PostsResponse.swift in Sources */,
+				B8522E8225ADE8AA000E5B9D /* PostDetailViewController.swift in Sources */,
 				B812205D25ACFCC700D9BAB5 /* Posts.swift in Sources */,
 				B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */,
 				B866BB7725AD27460040541A /* PostCell.swift in Sources */,
 				B812207625AD011400D9BAB5 /* Constants.swift in Sources */,
+				B8E0E05825AD2E6A002DB948 /* UIImage+Extension.swift in Sources */,
 				B812202325ACF22D00D9BAB5 /* SceneDelegate.swift in Sources */,
 				B812207125AD002100D9BAB5 /* PostsService.swift in Sources */,
 			);
@@ -446,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -501,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

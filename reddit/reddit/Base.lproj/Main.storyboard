@@ -8,22 +8,64 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Post Detail View Controller-->
         <scene sceneID="6iJ-mY-Faf">
             <objects>
-                <viewController id="OO0-Hi-q5Z" sceneMemberID="viewController">
+                <viewController id="OO0-Hi-q5Z" customClass="PostDetailViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qn2-pl-pda">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="sTY-35-BTX">
+                                <rect key="frame" x="20" y="108" width="374" height="191"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4v-DV-dRY">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-l2-D0M">
+                                        <rect key="frame" x="87" y="20.5" width="200" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Oqp-IM-vZY"/>
+                                            <constraint firstAttribute="width" secondItem="p9L-l2-D0M" secondAttribute="height" multiplier="4:3" id="o1c-FF-Ll9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxR-QL-ueG">
+                                        <rect key="frame" x="0.0" y="170.5" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="wxR-QL-ueG" firstAttribute="leading" secondItem="sTY-35-BTX" secondAttribute="leading" id="6LM-ts-g1O"/>
+                                    <constraint firstAttribute="trailing" secondItem="x4v-DV-dRY" secondAttribute="trailing" id="Hta-Bu-hks"/>
+                                    <constraint firstAttribute="trailing" secondItem="wxR-QL-ueG" secondAttribute="trailing" id="XbG-43-amP"/>
+                                    <constraint firstItem="x4v-DV-dRY" firstAttribute="leading" secondItem="sTY-35-BTX" secondAttribute="leading" id="wmu-2E-0eA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="TAQ-rP-gqD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TAQ-rP-gqD" firstAttribute="trailing" secondItem="sTY-35-BTX" secondAttribute="trailing" constant="20" id="3Bz-cf-rBw"/>
+                            <constraint firstItem="sTY-35-BTX" firstAttribute="leading" secondItem="TAQ-rP-gqD" secondAttribute="leading" constant="20" id="3Sl-e0-s0C"/>
+                            <constraint firstItem="sTY-35-BTX" firstAttribute="top" secondItem="TAQ-rP-gqD" secondAttribute="top" constant="20" id="EHv-aI-yot"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="x4v-DV-dRY" id="2fD-hH-kdN"/>
+                        <outlet property="thumbnailImageView" destination="p9L-l2-D0M" id="tN9-Z8-7Hq"/>
+                        <outlet property="titleLabel" destination="wxR-QL-ueG" id="X2v-7h-Huw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LAT-tq-0OS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-332" y="443"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Reddit Posts-->
         <scene sceneID="d4X-za-Pl6">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="XPU-Cc-0fs" customClass="PostsViewController" customModule="reddit" customModuleProvider="target" sceneMemberID="viewController">
@@ -104,7 +146,7 @@
                             <outlet property="delegate" destination="XPU-Cc-0fs" id="6QQ-2P-xal"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="6Yz-aB-c8r"/>
+                    <navigationItem key="navigationItem" title="Reddit Posts" id="6Yz-aB-c8r"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnp-01-F5h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
