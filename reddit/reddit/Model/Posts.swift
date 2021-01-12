@@ -7,21 +7,6 @@
 
 import Foundation
 
-struct PostsResponse: Codable {
-    let data: PostsResponseData
-}
-
-struct PostsResponseData: Codable {
-    let children: [Child]
-    let after: String?
-    let before: String?
-}
-
-struct Child: Codable {
-    let kind: String
-    let data: Post
-}
-
 struct Post: Codable {
     let selftext: String
     let clicked: Bool

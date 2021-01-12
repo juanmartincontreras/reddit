@@ -12,12 +12,12 @@ struct PostsResponse: Codable {
 }
 
 struct PostsResponseData: Codable {
-    let children: [Child]
+    let children: [PostResponseItem]?
     let after: String?
     let before: String?
 }
 
-struct Child: Codable {
+struct PostResponseItem: Codable {
     let kind: String
     let data: Post
 }

@@ -8,8 +8,6 @@
 import Foundation
 
 struct API {
-
-    static let baseUrl = 
-    static let topPosts = "https://api.twitter.com/"
-
+    static let baseUrl = "https://www.reddit.com/r/redditdev/"
+    static let topPosts = baseUrl + "top.json"
 }

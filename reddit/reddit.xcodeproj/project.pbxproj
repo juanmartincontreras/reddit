@@ -15,6 +15,11 @@
 		B812202D25ACF23000D9BAB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B812202B25ACF23000D9BAB5 /* LaunchScreen.storyboard */; };
 		B812203825ACF23000D9BAB5 /* redditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812203725ACF23000D9BAB5 /* redditTests.swift */; };
 		B812204325ACF23000D9BAB5 /* redditUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812204225ACF23000D9BAB5 /* redditUITests.swift */; };
+		B812205D25ACFCC700D9BAB5 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812205C25ACFCC700D9BAB5 /* Posts.swift */; };
+		B812206625ACFF0D00D9BAB5 /* PostsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812206525ACFF0D00D9BAB5 /* PostsResponse.swift */; };
+		B812207125AD002100D9BAB5 /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812207025AD002100D9BAB5 /* PostsService.swift */; };
+		B812207625AD011400D9BAB5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B812207525AD011400D9BAB5 /* Constants.swift */; };
+		B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81220A525AD034400D9BAB5 /* PostsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		B812203E25ACF23000D9BAB5 /* redditUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = redditUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B812204225ACF23000D9BAB5 /* redditUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = redditUITests.swift; sourceTree = "<group>"; };
 		B812204425ACF23000D9BAB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B812205C25ACFCC700D9BAB5 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		B812206525ACFF0D00D9BAB5 /* PostsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsResponse.swift; sourceTree = "<group>"; };
+		B812207025AD002100D9BAB5 /* PostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		B812207525AD011400D9BAB5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B81220A525AD034400D9BAB5 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +109,13 @@
 		B812201F25ACF22D00D9BAB5 /* reddit */ = {
 			isa = PBXGroup;
 			children = (
-				B812205825ACF27900D9BAB5 /* models */,
-				B812205725ACF26000D9BAB5 /* views */,
-				B812205325ACF24D00D9BAB5 /* viewModels */,
+				B81220A125AD015C00D9BAB5 /* Settings */,
+				B812206425ACFED400D9BAB5 /* Service */,
+				B812205825ACF27900D9BAB5 /* Model */,
+				B812205725ACF26000D9BAB5 /* View */,
+				B812205325ACF24D00D9BAB5 /* ViewModel */,
 				B812202025ACF22D00D9BAB5 /* AppDelegate.swift */,
 				B812202225ACF22D00D9BAB5 /* SceneDelegate.swift */,
-				B812202425ACF22D00D9BAB5 /* ViewController.swift */,
 				B812202625ACF22D00D9BAB5 /* Main.storyboard */,
 				B812202925ACF23000D9BAB5 /* Assets.xcassets */,
 				B812202B25ACF23000D9BAB5 /* LaunchScreen.storyboard */,
@@ -131,25 +142,45 @@
 			path = redditUITests;
 			sourceTree = "<group>";
 		};
-		B812205325ACF24D00D9BAB5 /* viewModels */ = {
+		B812205325ACF24D00D9BAB5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B81220A525AD034400D9BAB5 /* PostsViewModel.swift */,
 			);
-			path = viewModels;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		B812205725ACF26000D9BAB5 /* views */ = {
+		B812205725ACF26000D9BAB5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B812202425ACF22D00D9BAB5 /* ViewController.swift */,
 			);
-			path = views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		B812205825ACF27900D9BAB5 /* models */ = {
+		B812205825ACF27900D9BAB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B812205C25ACFCC700D9BAB5 /* Posts.swift */,
+				B812206525ACFF0D00D9BAB5 /* PostsResponse.swift */,
 			);
-			path = models;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B812206425ACFED400D9BAB5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B812207025AD002100D9BAB5 /* PostsService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B81220A125AD015C00D9BAB5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B812207525AD011400D9BAB5 /* Constants.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +315,12 @@
 			files = (
 				B812202525ACF22D00D9BAB5 /* ViewController.swift in Sources */,
 				B812202125ACF22D00D9BAB5 /* AppDelegate.swift in Sources */,
+				B812206625ACFF0D00D9BAB5 /* PostsResponse.swift in Sources */,
+				B812205D25ACFCC700D9BAB5 /* Posts.swift in Sources */,
+				B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */,
+				B812207625AD011400D9BAB5 /* Constants.swift in Sources */,
 				B812202325ACF22D00D9BAB5 /* SceneDelegate.swift in Sources */,
+				B812207125AD002100D9BAB5 /* PostsService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
