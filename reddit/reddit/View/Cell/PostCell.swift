@@ -15,6 +15,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var commentsCountLabel: UILabel!
 
     var post: Post? {
         didSet {
@@ -24,10 +25,22 @@ class PostCell: UITableViewCell {
 
     private func loadPost() {
         authorLabel.text = post?.author
+
+        if let timestamp = post?.createdUTC {
+            let date = Date(timeIntervalSince1970: timestamp)
+            createdAtLabel.text = date.timeAgoDisplay()
+        } else {
+            createdAtLabel.text = nil
+        }
+
+
         titleLabel.text = post?.title
         if let thumbnail = post?.thumbnail, let thumbnailUrl = URL(string: thumbnail) {
             thumbnailImageView.load(url: thumbnailUrl)
         }
+
+        let commentsCount = post?.numComments ?? 0
+        commentsCountLabel.text = "\(commentsCount) Comments"
     }
 
     override func prepareForReuse() {
@@ -35,5 +48,10 @@ class PostCell: UITableViewCell {
         titleLabel.text = nil
         thumbnailImageView.image = nil
         createdAtLabel.text = nil
+        commentsCountLabel.text = "0 Comments"
     }
+
+    @IBAction func onDismissPostTap(_ sender: Any) {
+    }
+
 }

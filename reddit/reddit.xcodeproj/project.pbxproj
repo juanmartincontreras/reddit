@@ -22,6 +22,7 @@
 		B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81220A525AD034400D9BAB5 /* PostsViewModel.swift */; };
 		B8522E8225ADE8AA000E5B9D /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8522E8125ADE8AA000E5B9D /* PostDetailViewController.swift */; };
 		B866BB7725AD27460040541A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B866BB7625AD27460040541A /* PostCell.swift */; };
+		B8B9359E25AE84B700F75683 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B9359D25AE84B700F75683 /* Date+Extension.swift */; };
 		B8E0E05825AD2E6A002DB948 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E0E05725AD2E6A002DB948 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		B81220A525AD034400D9BAB5 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		B8522E8125ADE8AA000E5B9D /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		B866BB7625AD27460040541A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		B8B9359D25AE84B700F75683 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		B8E0E05725AD2E6A002DB948 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E0E05725AD2E6A002DB948 /* UIImage+Extension.swift */,
+				B8B9359D25AE84B700F75683 /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 				B812206625ACFF0D00D9BAB5 /* PostsResponse.swift in Sources */,
 				B8522E8225ADE8AA000E5B9D /* PostDetailViewController.swift in Sources */,
 				B812205D25ACFCC700D9BAB5 /* Posts.swift in Sources */,
+				B8B9359E25AE84B700F75683 /* Date+Extension.swift in Sources */,
 				B81220A625AD034400D9BAB5 /* PostsViewModel.swift in Sources */,
 				B866BB7725AD27460040541A /* PostCell.swift in Sources */,
 				B812207625AD011400D9BAB5 /* Constants.swift in Sources */,

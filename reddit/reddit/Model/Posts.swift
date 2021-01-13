@@ -15,7 +15,7 @@ struct Post: Codable {
     let id, author: String
     let numComments: Int
     let url: String
-    let createdUTC: Int
+    let createdUTC: Double
 
     enum CodingKeys: String, CodingKey {
         case selftext, clicked, title, thumbnail
