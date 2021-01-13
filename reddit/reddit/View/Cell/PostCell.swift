@@ -25,5 +25,15 @@ class PostCell: UITableViewCell {
     private func loadPost() {
         authorLabel.text = post?.author
         titleLabel.text = post?.title
+        if let thumbnail = post?.thumbnail, let thumbnailUrl = URL(string: thumbnail) {
+            thumbnailImageView.load(url: thumbnailUrl)
+        }
+    }
+
+    override func prepareForReuse() {
+        authorLabel.text = nil
+        titleLabel.text = nil
+        thumbnailImageView.image = nil
+        createdAtLabel.text = nil
     }
 }
