@@ -11,14 +11,11 @@ class PostsViewController: UITableViewController {
 
     private let postsViewModel = PostsViewModel()
 
-    var postDetailsViewController: PostDetailViewController?
-
     var delegate: PostSelectionDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initDetailViewController()
         bindViewModel()
         loadPosts()
     }
@@ -36,18 +33,6 @@ class PostsViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-    }
-
-    private func initDetailViewController() {
-        guard let controllers = splitViewController?.viewControllers,
-              controllers.count > 1,
-              let navigationController = controllers[controllers.count - 1] as? UINavigationController
-        else {
-            return
-        }
-
-        self.postDetailsViewController = navigationController.topViewController as? PostDetailViewController
-        delegate = postDetailsViewController
     }
 
     // MARK: - Table view data source
