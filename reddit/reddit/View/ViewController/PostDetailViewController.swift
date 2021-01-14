@@ -23,7 +23,16 @@ class PostDetailViewController: UIViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadPost()
+    }
+
     private func loadPost() {
+        if !isViewLoaded {
+            return
+        }
+
         authorLabel.text = post?.author
         titleLabel.text = post?.title
         if let thumbnail = post?.thumbnail, let thumbnailUrl = URL(string: thumbnail) {
