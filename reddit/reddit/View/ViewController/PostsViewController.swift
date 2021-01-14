@@ -16,11 +16,13 @@ class PostsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.refreshControl?.addTarget(self, action: #selector(loadPosts), for: UIControl.Event.valueChanged)
+
         bindViewModel()
         loadPosts()
     }
 
-    private func loadPosts() {
+    @objc private func loadPosts() {
         postsViewModel.loadTopPosts()
     }
 
@@ -30,9 +32,17 @@ class PostsViewController: UITableViewController {
         }
         postsViewModel.onPostsLoaded = {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self.onPostsLoaded()
             }
         }
+    }
+
+    private func onPostsLoaded() {
+        if let firstPost = postsViewModel.posts?.first {
+            delegate?.didSelect(post: firstPost)
+        }
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
