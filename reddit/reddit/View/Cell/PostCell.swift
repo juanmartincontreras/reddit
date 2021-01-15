@@ -16,6 +16,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var commentsCountLabel: UILabel!
+    @IBOutlet weak var unreadIndicatorImageView: UIImageView!
 
     var post: Post? {
         didSet {
@@ -43,6 +44,9 @@ class PostCell: UITableViewCell {
 
         let commentsCount = post?.numComments ?? 0
         commentsCountLabel.text = "\(commentsCount) Comments"
+
+        let postVisited = post?.visited ?? false
+        unreadIndicatorImageView.isHidden = !postVisited
     }
 
     override func prepareForReuse() {
@@ -51,6 +55,7 @@ class PostCell: UITableViewCell {
         thumbnailImageView.image = UIImage(named: "placeholder")
         createdAtLabel.text = nil
         commentsCountLabel.text = "0 Comments"
+        unreadIndicatorImageView.isHidden = false
     }
 
     @IBAction func onDismissPostTap(_ sender: Any) {

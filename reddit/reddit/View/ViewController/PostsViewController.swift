@@ -20,14 +20,20 @@ class PostsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.refreshControl?.addTarget(self, action: #selector(loadPosts), for: UIControl.Event.valueChanged)
-        
+
+        initTableView()
         bindViewModel()
         loadPosts()
     }
+
+    private func initTableView() {
+        self.tableView.backgroundView = nil
+        self.tableView.backgroundColor = .black
+        self.refreshControl?.addTarget(self, action: #selector(loadPosts), for: UIControl.Event.valueChanged)
+    }
     
     @objc private func loadPosts() {
+        refreshControl?.beginRefreshing()
         postsViewModel.loadTopPosts()
     }
     

@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 as? PostDetailViewController
         else { fatalError() }
 
+        splitViewController.preferredDisplayMode = .oneBesideSecondary
         masterViewController.delegate = detailViewController
     }
 
