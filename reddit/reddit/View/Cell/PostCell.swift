@@ -22,6 +22,8 @@ class PostCell: UITableViewCell {
             loadPost()
         }
     }
+    
+    var onDismiss: (() -> Void)?
 
     private func loadPost() {
         authorLabel.text = post?.author
@@ -46,12 +48,13 @@ class PostCell: UITableViewCell {
     override func prepareForReuse() {
         authorLabel.text = nil
         titleLabel.text = nil
-        thumbnailImageView.image = nil
+        thumbnailImageView.image = UIImage(named: "placeholder")
         createdAtLabel.text = nil
         commentsCountLabel.text = "0 Comments"
     }
 
     @IBAction func onDismissPostTap(_ sender: Any) {
+        onDismiss?()
     }
 
 }

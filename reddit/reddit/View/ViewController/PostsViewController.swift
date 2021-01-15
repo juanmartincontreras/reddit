@@ -9,6 +9,7 @@ import UIKit
 
 class PostsViewController: UITableViewController {
 
+    private let footerHeight: CGFloat = 40
     private let showDetailSegueIdentifier = "showDetail"
 
     private let postsViewModel = PostsViewModel()
@@ -49,6 +50,21 @@ class PostsViewController: UITableViewController {
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
+
+    private func dismiss(cell: UITableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell),
+              let post = postsViewModel.posts?[indexPath.row] else {
+            return
+        }
+        postsViewModel.remove(post: post)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
+
+    func dismissAll() {
+        postsViewModel.removeAllPosts()
+        tableView.reloadData()
+    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let post = selectedPost else {
@@ -79,9 +95,28 @@ class PostsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let postCell = tableView.dequeueReusableCell(withIdentifier: PostCell.reuseIdentifier, for: indexPath) as? PostCell
-        postCell?.post = postsViewModel.posts?[indexPath.row]
-        return postCell ?? UITableViewCell()
+        guard let postCell = tableView.dequeueReusableCell(withIdentifier: PostCell.reuseIdentifier, for: indexPath) as? PostCell else {
+            return UITableViewCell()
+        }
+
+        postCell.post = postsViewModel.posts?[indexPath.row]
+        postCell.onDismiss = {
+            self.dismiss(cell: postCell)
+        }
+        return postCell
+    }
+
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: footerHeight)
+        let footerView = PostFooterCell(frame: frame)
+        footerView.onDismissAll = {
+            self.dismissAll()
+        }
+        return footerView
+    }
+
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return footerHeight
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

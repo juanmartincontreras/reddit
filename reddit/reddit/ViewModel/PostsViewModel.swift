@@ -28,4 +28,14 @@ class PostsViewModel {
         }
     }
 
+    func remove(post: Post) {
+        self.posts = posts?.filter({ item -> Bool in
+            item.id != post.id
+        })
+    }
+
+    func removeAllPosts() {
+        self.posts?.removeAll()
+    }
+
 }
